@@ -68,7 +68,7 @@ class Pet
     values = [id]
     results = SqlRunner.run(sql, values)
     pet_hash = results.first
-    pet = Pets.new(order_hash)
+    pet = Pet.new(pet_hash)
     return pet
   end
 

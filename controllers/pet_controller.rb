@@ -8,45 +8,45 @@ require( 'sinatra' )
 
   #index
   get '/pets' do
-    @pets = Pet.all()
+    @pet = Pet.all()
     erb (:"pets/index")
   end
 
   # #new
   get '/pets/new' do
-    @pets = Pet.all()
+    @pet = Pet.all()
     erb (:"pets/new")
   end
 
-  # #create
-  # post '/owners' do
-  #   @owner = Owner.new(params)
-  #   @owner.save
-  #   erb (:"owners/create")
-  # end
-  #
-  # #edit
-  # get '/owners/:id/edit' do
-  #   @owner = Owner.find( params[:id] )
-  #   erb (:"owners/edit")
-  # end
-  #
-  # #update
-  # post '/owners/:id' do
-  #   Owner.new( params ).update
-  #   redirect to '/owners'
-  # end
-  #
-  #
-  # #delete
-  # post '/owners/:id/delete' do
-  #   owner = Owner.find(params[:id])
-  #   owner.delete
-  #   redirect to '/owners'
-  # end
-  #
-  # #show
-  # get '/owners/:id' do
-  #   @owner = Owner.find( params[:id] )
-  #   erb( :"owners/show" )
-  # end
+  #create
+  post '/pets' do
+    @pet = Pet.new(params)
+    @pet.save
+    erb (:"pets/create")
+  end
+
+  #edit
+  get '/pets/:id/edit' do
+    @pet = Pet.find( params[:id] )
+    erb (:"pets/edit")
+  end
+
+  #update
+  post '/pets/:id' do
+    Pet.new( params ).update
+    redirect to '/pets'
+  end
+
+
+  #delete
+  post '/pets/:id/delete' do
+    pet = Pet.find(params[:id])
+    pet.delete
+    redirect to '/pets'
+  end
+
+  #show
+  get '/pets/:id' do
+    @pet = Pet.find( params[:id] )
+    erb( :"pets/show" )
+  end

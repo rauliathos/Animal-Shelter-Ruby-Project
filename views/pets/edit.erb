@@ -1,0 +1,56 @@
+<p>Use this form for modify the selected pet!</p>
+
+
+<form action="/pets/<%= @pet.id %>" method="post">
+
+
+    <label for="name-field">Pet Name:</label>
+    <input id= "name-field" type="text" name="pet_name" >
+    <br>
+    <br>
+    <label for="type_field">Pet Type:</label>
+    <!-- <div> -->
+      <input type="radio" id="type_field" name="pet_type" value="cat"
+      checked>
+      <label for="cat">Cat</label>
+    <!-- </div> -->
+    <!-- <div> -->
+      <input type="radio" id="type_field" name="pet_type" value="dog"
+
+      checked>
+      <label for="dog">Dog</label>
+    <!-- </div> -->
+
+    <br>
+    <label for="admision_date-field">Admision Date:</label>
+    <input type="date" id="admision_date-fiels" name="admision_date"
+           min="2010-01-01" max="2018-12-18">
+
+
+    <br>
+    <label for="adoptable-field">Status:</label>
+
+    <!-- <div> -->
+      <input
+      type="radio"
+      id="adoptable-field"
+      name="adoptable"
+      value="t">
+      <label for="For Adoption">For Adoption</label>
+    <!-- </div> -->
+
+    <!-- <div> -->
+      <input
+      type="radio"
+      id="adoptable-field"
+      name="adoptable"
+      value="f"
+      checked>
+      <label for="Not Ready For Adoption">Not Ready For Adoption</label>
+    <!-- </div> -->
+
+    <br>
+    <br>
+
+  <input type="submit" value="Modify Pet">
+</form>

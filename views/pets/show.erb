@@ -1,0 +1,6 @@
+<p>Name: <%=@pet.pet_name%> </p>
+
+<p><a href="/pets/<%= @pet.id %>/edit">Edit Pet</a></p>
+<form class="" action="/pets/<%= @pet.id %>/delete" method="post">
+  <input type="submit" value="Delete Pet">
+</form>

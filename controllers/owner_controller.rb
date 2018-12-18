@@ -8,13 +8,13 @@ also_reload( '../models/*' )
 
 #index
 get '/owners' do
-  @owners = Owner.all()
+  @owner = Owner.all()
   erb (:"owners/index")
 end
 
 #new
 get '/owners/new' do
-  @owners = Owner.all()
+  @owner = Owner.all()
   erb (:"owners/new")
 end
 
