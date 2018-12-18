@@ -9,45 +9,36 @@
   <br>
   <label for="type_field">Pet Type:</label>
   <!-- <div> -->
-    <input type="radio" id="type_field" name="pet_type" value="cat"
-    checked>
-    <label for="cat">Cat</label>
+  <input type="radio" id="type_field" name="pet_type" value="cat"
+  checked>
+  <label for="cat">Cat</label>
   <!-- </div> -->
   <!-- <div> -->
-    <input type="radio" id="type_field" name="pet_type" value="dog"
+  <input type="radio" id="type_field" name="pet_type" value="dog"
 
-    checked>
-    <label for="dog">Dog</label>
+  checked>
+  <label for="dog">Dog</label>
   <!-- </div> -->
 
-  <br>
+  <br><br>
   <label for="admision_date-field">Admision Date:</label>
   <input type="date" id="admision_date-fiels" name="admision_date"
-         min="2010-01-01" max="2018-12-18">
+  min="2010-01-01" max="2018-12-18">
 
 
-  <br>
-  <label for="adoptable-field">Status:</label>
+  <br><br>
+  <label
+  for="adoptable-field">
+  Status: Keep the pet in quarantine for the firs 7 days!</label>
 
-  <!-- <div> -->
-    <input
-    type="radio"
-    id="adoptable-field"
-    name="adoptable"
-    value=t>
-    <label for=t>t</label>
-  <!-- </div> -->
+<br><br>
+  <label for="owner-select">Select Owner:</label>
+  <select name="owner" id ="owner-select">
+    <% @owners.each do |owner| %>
+    <option value=<%= owner.id %>><%= owner.id %>><%= owner.name %></option>
+    <% end %>
+  </select>
 
-  <!-- <div> -->
-    <input
-    type="radio"
-    id="adoptable-field"
-    name="adoptable"
-    value=f>
-    <label for=f>f</label>
-  <!-- </div> -->
-
-  <br>
-  <br>
+  <br><br>
   <input type="submit" value="Insert New Pet">
 </form>

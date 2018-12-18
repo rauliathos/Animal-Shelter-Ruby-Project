@@ -17,7 +17,8 @@ class Pet
     @owner_id = options['owner_id'].to_i if options['owner_id']
   end
 
-  def owners()
+  def owner()
+    return Owner.new({}) if !@owner_id
     sql = "SELECT * FROM owners
     WHERE id = $1"
     values = [@owner_id]
@@ -26,6 +27,7 @@ class Pet
     owner = Owner.new(owner_hash)
     return owner
   end
+
 
   def save
     sql = "INSERT INTO pets(
