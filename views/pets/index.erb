@@ -1,0 +1,17 @@
+<% @pets.each do |pet| %>
+
+<p>Pet Name: <%= pet.pet_name%> </p>
+<p>Pet Type: <%= pet.pet_type%> </p>
+<p>Adimsion Date: <%= pet.admision_date%> </p>
+<!-- <p>CHECK ADOPTABLE: <%= pet.adoptable%> </p> -->
+
+<% if pet.adoptable == "t" %>
+   <p>Status: For Adoption</p>
+  <% else%>
+  <p>Status: Not Ready For Adoption</p>
+<% end%>
+<p>Owner ID : <%= pet.owner_id%></p>
+<p><a href="/pets/<%= pet.id %>">Pet Details</a></p>
+<hr />
+<hr />
+<%end%>

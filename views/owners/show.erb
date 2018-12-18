@@ -1,0 +1,6 @@
+<p>Name: <%=@owner.name%> </p>
+
+<p><a href="/owners/<%= @owner.id %>/edit">Edit Owner</a></p>
+<form class="" action="/owners/<%= @owner.id %>/delete" method="post">
+  <input type="submit" value="Delete Owner">
+</form>

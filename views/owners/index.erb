@@ -1,0 +1,7 @@
+<% @owners.each do |owner| %>
+<p>Name: <%= owner.name %> </p>
+
+<!-- we are constructing a LINK with the owner_id -->
+<p><a href="/owners/<%= owner.id %>">Owner Details</a></p>
+<hr />
+<% end %>
