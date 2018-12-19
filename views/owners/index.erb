@@ -1,9 +1,11 @@
 
 <p><a href="/owners/new">Add New Owner</a></p>
 <% @owner.each do |owner| %>
+<%if owner.name != "No Owner" %>
 <p>Name: <%= owner.name %> </p>
 
 <!-- we are constructing a LINK with the owner_id -->
 <p><a href="/owners/<%= owner.id %>">Owner Options</a></p>
 <hr />
+<% end %>
 <% end %>

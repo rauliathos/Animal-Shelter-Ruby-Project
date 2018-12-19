@@ -1,19 +1,26 @@
 <p><hr /><hr /></p>
 <p><a href="/pets/new">Add New Pet</a></p>
+<!-- <p><a href="/pets/"></a></p> -->
 <% @pet.each do |pet| %>
 
 <p>Pet Name: <%= pet.pet_name%> </p>
 <p>Pet Type: <%= pet.pet_type%> </p>
 <p>Adimsion Date: <%= pet.admision_date%> </p>
-<!-- <p>CHECK ADOPTABLE: <%= pet.adoptable%> </p> -->
+
 
 <% if pet.adoptable == "t" %>
-<p>Status: For Adoption</p>
-<% else%>
-<p>Status: Not Ready For Adoption</p>
-<% end%>
+  <% if pet.owner_id == "null"%>
+    <p>Status:  Ready For Adoption!!!</p>
+    <% elsif pet.owner.name == "No Owner" %>
+        <p>Status:  Ready For Adoption!!</p>
+      <% else %>
+        <p>Adopted by: <%= pet.owner.name%></p>
+  <% end%>
+  <% else %>
+    <p>Not Ready for Adoption!</p>
+  <% end %>
 
-<p>Owner ID : <%= pet.owner.name%></p>
+
 
 <p><a href="/pets/<%= pet.id %>">Pet Options</a></p>
 <hr />

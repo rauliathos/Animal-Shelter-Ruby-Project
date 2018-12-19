@@ -1,4 +1,4 @@
-<h3>Fill Out Details Of New Pet Entry</h3>
+<h3>Add the Details of the New Pet </h3>
 
 
 <form action="/pets" method="post">
@@ -23,22 +23,16 @@
   <br><br>
   <label for="admision_date-field">Admision Date:</label>
   <input type="date" id="admision_date-fiels" name="admision_date"
-  min="2010-01-01" max="2018-12-18">
+  min="2010-01-01" max="2018-12-20">
 
 
   <br><br>
   <label
   for="adoptable-field">
-  Status: Keep the pet in quarantine for the firs 7 days!</label>
+   Keep the pet in quarantine for the firs 7 days!</label>
 
-<br><br>
-  <label for="owner-select">Select Owner:</label>
-  <select name="owner" id ="owner-select">
-    <% @owners.each do |owner| %>
-    <option value=<%= owner.id %>><%= owner.id %>><%= owner.name %></option>
-    <% end %>
-  </select>
+
 
   <br><br>
-  <input type="submit" value="Insert New Pet">
+  <input type="submit" value="Add New Pet">
 </form>

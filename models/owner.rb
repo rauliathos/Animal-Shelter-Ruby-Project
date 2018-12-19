@@ -4,13 +4,14 @@ require_relative('./pet')
 
 class Owner
 
-  attr_reader :id
-  attr_accessor :name
+
+  attr_accessor :name, :id
 
 
   def initialize(options)
     @id = options['id'].to_i if options['id']
     @name = options['name']
+
 
   end
 

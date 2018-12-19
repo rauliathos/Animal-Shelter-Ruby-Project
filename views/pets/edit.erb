@@ -3,54 +3,52 @@
 
 <form action="/pets/<%= @pet.id %>" method="post">
 
+  <p>Name: <%=@pet.pet_name%> </p>
+  <input type="hidden" name="pet_name" value="<%=@pet.pet_name%>">
+  
+  <p>Type: <%= @pet.pet_type%> </p>
+  <input type="hidden" name="pet_type" value="<%=@pet.pet_type%>">
 
-    <label for="name-field">Pet Name:</label>
-    <input id= "name-field" type="text" name="pet_name" >
-    <br>
-    <br>
-    <label for="type_field">Pet Type:</label>
-    <!-- <div> -->
-      <input type="radio" id="type_field" name="pet_type" value="cat"
-      checked>
-      <label for="cat">Cat</label>
-    <!-- </div> -->
-    <!-- <div> -->
-      <input type="radio" id="type_field" name="pet_type" value="dog"
+  <p>Adimsion Date: <%= @pet.admision_date%> </p>
+  <input type="hidden" name="admision_date" value="<%=@pet.admision_date%>">
+  <br>
 
-      checked>
-      <label for="dog">Dog</label>
-    <!-- </div> -->
+  <label for="adoptable-field">Status:</label>
+  <!-- <div> -->
+  <input
+  type="radio"
+  id="adoptable-field"
+  name="adoptable"
+  value="t">
 
-    <br>
-    <label for="admision_date-field">Admision Date:</label>
-    <input type="date" id="admision_date-fiels" name="admision_date"
-           min="2010-01-01" max="2018-12-18">
+  <label for="For Adoption">Ready for Adoption
+        <br>
+    <% if @pet.adoptable == "t" %>
+      <label for="owner-select">Select Owner:</label>
+
+      <select name="owner_id" id ="owner_id">
+      <% @owners.each do |owner| %>
+      <option value=<%=owner.id%>> <%= owner.name%></option>
+      <% end %>
+    </select>
+    <% end %>
+  </label>
+  <!-- </div> -->
+  <br><br>
+  <!-- <div> -->
+  <input
+  type="radio"
+  id="adoptable-field"
+  name="adoptable"
+  value="f"
+  checked>
+  <label for="Not Ready For Adoption">Not Ready For Adoption</label>
+  <!-- </div> -->
 
 
-    <br>
-    <label for="adoptable-field">Status:</label>
 
-    <!-- <div> -->
-      <input
-      type="radio"
-      id="adoptable-field"
-      name="adoptable"
-      value="t">
-      <label for="For Adoption">For Adoption</label>
-    <!-- </div> -->
-
-    <!-- <div> -->
-      <input
-      type="radio"
-      id="adoptable-field"
-      name="adoptable"
-      value="f"
-      checked>
-      <label for="Not Ready For Adoption">Not Ready For Adoption</label>
-    <!-- </div> -->
-
-    <br>
-    <br>
+  <br>
+  <br>
 
   <input type="submit" value="Modify Pet">
 </form>

@@ -1,4 +1,8 @@
-<p>Name: <%=@pet.pet_name%> </p>
+
+<p>Pet Name: <%= @pet.pet_name%> </p>
+<p>Pet Type: <%= @pet.pet_type%> </p>
+<p>Adimsion Date: <%= @pet.admision_date%> </p>
+<p>Adopted by: <%= @pet.owner.name %> </p>
 
 <p><a href="/pets/<%= @pet.id %>/edit">Edit Pet</a></p>
 <form class="" action="/pets/<%= @pet.id %>/delete" method="post">

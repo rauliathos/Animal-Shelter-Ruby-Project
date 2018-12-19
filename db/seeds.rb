@@ -5,6 +5,8 @@ require_relative('../models/pet')
 Owner.delete_all
 Pet.delete_all
 
+shelter = Owner.new({'name' => 'No Owner'})
+shelter.save
 owner1 = Owner.new({'name' => 'Andrea'})
 owner1.save
 

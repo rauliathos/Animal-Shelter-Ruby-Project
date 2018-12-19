@@ -14,7 +14,7 @@ require( 'sinatra' )
 
   # #new
   get '/pets/new' do
-    @owners = Owner.all()
+    @owners =Owner.all()
     erb (:"pets/new")
   end
 
@@ -27,6 +27,7 @@ require( 'sinatra' )
 
   #edit
   get '/pets/:id/edit' do
+    @owners = Owner.all()
     @pet = Pet.find( params[:id] )
     erb (:"pets/edit")
   end
