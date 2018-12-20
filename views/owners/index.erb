@@ -5,7 +5,20 @@
 <p>Name: <%= owner.name %> </p>
 
 <!-- we are constructing a LINK with the owner_id -->
-<p><a href="/owners/<%= owner.id %>">Owner Options</a></p>
+<!-- <p><a href="/owners/<%= owner.id %>">Owner Options</a></p> -->
 <hr />
 <% end %>
+<% end %>
+
+
+
+<% @owner.each do |owner| %>
+<hr>
+   <p><%= owner.name %></p><% if owner.pet.count == 0 %><p> has no pets.</p>
+   <% else %>
+     <p>has</p> <% for pet in owner.pet %><li><%= pet.pet_name %></li>
+     <% end %>
+   <% end %>
+   <% unless owner.name == "No Owner"%>
+   <% end %>
 <% end %>

@@ -15,11 +15,11 @@ class Owner
 
   end
 
-  def pets
+  def pet
    sql = "SELECT * FROM pets WHERE owner_id = $1"
    values = [@id]
    pet_hashes = SqlRunner.run(sql, values)
-   pet_objects = pet_hashes.map{|pet_hash| Pets.new(pet_hash)}
+   pet_objects = pet_hashes.map{|pet_hash| Pet.new(pet_hash)}
    return pet_objects
 
   end
